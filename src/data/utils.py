@@ -89,6 +89,8 @@ def make_data():
 def make_data_multi():
 
     Es, Is = spectrum(5, 1e7)
+    material_profile = CS_Energy(np.array(materials), np.array(Es))
+    rect_profile = CS_Energy(np.array([14]), np.array(Es))
     base = Image.new('RGBA', (Nx, Ny), (0, 0, 0))
     d = ImageDraw.Draw(base)
 
