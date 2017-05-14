@@ -4,8 +4,8 @@ import numpy as np
 from model import poly2poly
 
 sess = tf.Session()
-model = recon2recon(sess, 'archpoly2poly', '../../../data/processed/train/',
-                    '../../../data/processed/test/',
-                    '../../../data/processed/val/')
+model = poly2poly(sess, 'archpoly2poly', '../../../data/processed/train/',
+                  '../../../data/processed/test/',
+                  '../../../data/processed/val/')
 
 model.train(10)
