@@ -5,9 +5,9 @@ from utils import make_data
 import sys
 import os
 
-train_path = '../data/processed/train'
-val_path = '../data/processed/val'
-test_path = '../data/processed/test'
+train_path = '../../data/processed/train'
+val_path = '../../data/processed/val'
+test_path = '../../data/processed/test'
 
 os.mkdir(train_path)
 os.mkdir(val_path)
