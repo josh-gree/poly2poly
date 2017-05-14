@@ -71,3 +71,6 @@ target/
 
 # exclude data from source control by default
 /data/
+
+# exclude checkpoints
+/src/models/arch1/archpoly2poly_14_5_15_5/
