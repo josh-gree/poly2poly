@@ -18,25 +18,25 @@ os.mkdir(test_path)
 for i in range(500):
     recon, min_diff, mid_energy = make_data()
     f = h5py.File(train_path + "{}.hdf5".format(i), "w")
-    f.create_dataset('recon', data=lim)
-    f.create_dataset('min_diff', data=full)
-    f.create_dataset('mid_energy', data=full)
+    f.create_dataset('recon', data=recon)
+    f.create_dataset('min_diff', data=min_diff)
+    f.create_dataset('mid_energy', data=mid_energy)
     f.close()
 
 # make validation
 for i in range(100):
     recon, min_diff, mid_energy = make_data()
     f = h5py.File(val_path + "{}.hdf5".format(i), "w")
-    f.create_dataset('recon', data=lim)
-    f.create_dataset('min_diff', data=full)
-    f.create_dataset('mid_energy', data=full)
+    f.create_dataset('recon', data=recon)
+    f.create_dataset('min_diff', data=min_diff)
+    f.create_dataset('mid_energy', data=mid_energy)
     f.close()
 
 # make test
 for i in range(500):
     recon, min_diff, mid_energy = make_data()
     f = h5py.File(test_path + "{}.hdf5".format(i), "w")
-    f.create_dataset('recon', data=lim)
-    f.create_dataset('min_diff', data=full)
-    f.create_dataset('mid_energy', data=full)
+    f.create_dataset('recon', data=recon)
+    f.create_dataset('min_diff', data=min_diff)
+    f.create_dataset('mid_energy', data=mid_energy)
     f.close()
