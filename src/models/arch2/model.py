@@ -109,7 +109,7 @@ class poly2poly(object):
 
             fname = fs[k]
             f = h5py.File(fname, "r")
-            inp, lab = f['recon'][:], f['mid_energy'][:]
+            inp, lab = f['recon'][:], f['min_diff'][:]
 
             inp = inp[..., np.newaxis]
             lab = lab[..., np.newaxis]
@@ -211,7 +211,9 @@ class poly2poly(object):
         d4_b = self.g_bn_d4c(
             conv2d(lrelu(d4_a), 64, name='g_d4_conv_b', k_h=3, k_w=3))
 
-        out = conv2d(d4_b, 1, k_h=1, k_w=1, name='out')
+        resid = conv2d(d4_b, 1, k_h=1, k_w=1, name='resid')
+
+        out = tf.add(resid, x, name='out')
 
         return out
 
