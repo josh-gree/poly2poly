@@ -1,7 +1,7 @@
 import pickle
 import h5py
 
-from utils import make_data
+from utils import make_data_multi
 import sys
 import os
 
