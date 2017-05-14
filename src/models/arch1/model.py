@@ -9,7 +9,7 @@ from glob import glob
 from ops import max_pool, conv2d, batch_norm, lrelu, deconv2d
 
 
-class recon2recon(object):
+class poly2poly(object):
 
     def __init__(self, sess, model_name, train_path, test_path, val_path):
 
@@ -109,7 +109,7 @@ class recon2recon(object):
 
             fname = fs[k]
             f = h5py.File(fname, "r")
-            inp, lab = f['lim'][:], f['full'][:]
+            inp, lab = f['recon'][:], f['mid_energy'][:]
 
             inp = inp[..., np.newaxis]
             lab = lab[..., np.newaxis]
