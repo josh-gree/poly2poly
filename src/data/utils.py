@@ -66,7 +66,7 @@ def make_data():
     midx = [np.where((material1_array == 2) & (material2_array == m))
             for m in materials]
 
-    img = np.zeros((Ne, Nx, Ny))
+    img = np.zeros((5, Nx, Ny))
 
     for ind, m in enumerate(midx):
         img[:, m[0], m[1]
